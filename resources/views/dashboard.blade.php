@@ -9,6 +9,11 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
+                    @if(session()->has('status'))
+                    <div class=" mt-5 shadow font-blod py-2 px-4 rounded">
+                      {{session('status')}}
+                    </div>
+                @endif
                     <h3>Show All Post</h3>
                     <div class="flex flex-col">
                         <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -44,7 +49,7 @@
                                                     {{$post->body}}
                                                 </td>
                                                 <td class="px-6 py-4 whitespace-nowrap">
-                                                    <a href="" class="bg-purple-500 hover:bg-purple-400
+                                                    <a href="{{url('/post/edit', $post->id)}}" class="bg-purple-500 hover:bg-purple-400
                                                     focus:outline-none text-sm py-1 px-2 rounded ml-5">Edit</a>
                                                     <a href="" class="bg-purple-500 hover:bg-purple-400
                                                     focus:outline-none text-sm py-1 px-2 rounded ml-5">Delete</a>
