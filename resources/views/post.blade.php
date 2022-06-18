@@ -45,6 +45,11 @@
                           </div>
                         </div>
                       </form>
+                      @if(session()->has('status'))
+                          <div class="bg-purple mt-5 shadow font-blod py-2 px-4 rounded">
+                            {{session('status')}}
+                          </div>
+                      @endif
                 </div>
             </div>
         </div>
